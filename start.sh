@@ -1,0 +1,1 @@
+npm run cy:run -- --record --spec "cypress/integration/my-spec.js"

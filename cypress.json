@@ -1,0 +1,9 @@
+{
+  "baseUrl": "http://opencart.abstracta.us",
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
+}
