@@ -1,7 +1,7 @@
 
 
-describe('My First Test', () => {
-  it.skip('Check home page', () => {
+describe('Home page', () => {
+  it.skip('Looks the same', () => {
     cy.visit('/')
     cy.eyesOpen({
       appName: 'Open Cart Demo',

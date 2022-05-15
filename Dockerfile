@@ -1,4 +1,4 @@
-FROM node:17-alpine
+FROM cypress/base:16.13.0
 
 WORKDIR /usr/src/app
 
@@ -8,4 +8,4 @@ RUN npm install
 
 EXPOSE 3000
 
-CMD [ "npm", "run", "cypress:production" ]
+ENTRYPOINT "/usr/src/app/start.sh"
