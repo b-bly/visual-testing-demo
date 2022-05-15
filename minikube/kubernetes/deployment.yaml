@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: node
-        image: gcr.io/${PROJECT_ID}/visual-testing-demo:${VERSION}
+        image: ${DOCKER_USERNAME}/visual-testing-demo:latest
         env:
         - name: NODE_ENV
           value: "production"
