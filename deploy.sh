@@ -1,6 +1,9 @@
 #!/bin/bash
 
-source .env
+if test -f .env ; then
+  source .env
+fi
+
 [ -z "$PROJECT_ID" ] && echo "PROJECT_ID not set" && exit 1
 [ -z "$VERSION" ] && echo "VERSION not set" && exit 1
 

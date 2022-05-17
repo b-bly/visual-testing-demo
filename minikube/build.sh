@@ -1,4 +1,8 @@
-source ../.env
+#!/bin/bash
+
+if test -f .env ; then
+  source ../.env
+fi
 
 rm -rf ../node_modules
 npm run clean:results
