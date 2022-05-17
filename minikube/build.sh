@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source ../.env
 
 rm -rf ../node_modules
