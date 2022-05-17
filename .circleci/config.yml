@@ -1,0 +1,58 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+orbs:
+  shellcheck: circleci/shellcheck@x.y.z
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  visual-testing-demo:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
+      - image: google/cloud-sdk
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
+      - run:
+          name: "Relative filepath from this dir"
+          command: bash ../hello.sh
+      - run:
+          name: "Relative from project dir"
+          command: bash hello.sh
+      - run:
+          name: "Slash Relative from project dir"
+          command: bash /hello.sh
+      - run:
+          name: gcloud authentication
+          command: |
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+            gcloud auth configure-docker
+      - run:
+          name: build image
+          command: bash ./build.sh
+      - run: 
+          name: deploy to k8s
+          command: bash ./deploy.sh
+
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  visual-testing-demo-workflow:
+    jobs:
+      - shellcheck/check
+      - visual-testing-demo:
+          requires:
+            - shellcheck/check
+          filters:
+            branches:
+              only: main
