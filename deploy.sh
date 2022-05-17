@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source .env
 [ -z "$PROJECT_ID" ] && echo "PROJECT_ID not set" && exit 1
 [ -z "$VERSION" ] && echo "VERSION not set" && exit 1
