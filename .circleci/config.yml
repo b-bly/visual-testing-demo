@@ -49,7 +49,9 @@ jobs:
 workflows:
   visual-testing-demo-workflow:
     jobs:
-      - shellcheck/check
+      - shellcheck/check:
+          exclude: SC1091
+          ignore-dirs: ./minikube
       - visual-testing-demo:
           requires:
             - shellcheck/check
