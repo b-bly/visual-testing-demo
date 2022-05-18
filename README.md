@@ -51,9 +51,16 @@ https://github.com/koalaman/shellcheck/wiki/Ignore
 
 Paths referenced in ci must be relative to project, not yaml location.
 
+correct: 
 ```
+  command: bash hello.sh
+```
+incorrect:
+```
+  command: bash ../hello.sh
 bash: ../hello.sh: No such file or directory
 ```
+
 
 ### To Do
 
