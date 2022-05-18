@@ -4,14 +4,14 @@ if test -f .env ; then
   source .env
 fi
 
-[ -z "$PROJECT_ID" ] && echo "PROJECT_ID not set" && exit 1
+[ -z "$GOOGLE_PROJECT_ID" ] && echo "GOOGLE_PROJECT_ID not set" && exit 1
 [ -z "$VERSION" ] && echo "VERSION not set" && exit 1
 
-export PROJECT_ID=$PROJECT_ID
+export GOOGLE_PROJECT_ID=$GOOGLE_PROJECT_ID
 export VERSION=$VERSION
 
 
-gcloud config set project "$PROJECT_ID"
+gcloud config set project "$GOOGLE_PROJECT_ID"
 
 echo 'Starting kubernetes cluster'
 
