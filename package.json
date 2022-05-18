@@ -28,7 +28,7 @@
   "homepage": "https://github.com/b-bly/visual-testing-demo#readme",
   "pre-commit": [
     "lint"
-  ]
+  ],
   "dependencies": {
     "@applitools/eyes-cypress": "^3.25.7",
     "concurrently": "^7.2.0",
