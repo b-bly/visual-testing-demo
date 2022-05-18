@@ -38,12 +38,12 @@ jobs:
             gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
             gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
             echo "y" | gcloud auth configure-docker
-      - run:
-          name: build image
-          command: bash build.sh
-      - run: 
-          name: deploy to k8s
-          command: bash deploy.sh
+      # - run:
+      #     name: build image
+      #     command: bash build.sh
+      # - run: 
+      #     name: deploy to k8s
+      #     command: bash deploy.sh
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows

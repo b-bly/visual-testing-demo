@@ -72,3 +72,4 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/configuring-domain-nam
 
 set up dns records for a domain name with cloud DNS
 https://cloud.google.com/dns/docs/set-up-dns-records-domain-name#create_a_new_record
+
