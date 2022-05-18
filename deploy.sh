@@ -11,7 +11,7 @@ export PROJECT_ID=$PROJECT_ID
 export VERSION=$VERSION
 
 
-gcloud config set project $PROJECT_ID
+gcloud config set project "$PROJECT_ID"
 
 echo 'Starting kubernetes cluster'
 

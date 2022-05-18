@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "shellcheck -e SC1091 ./**/*.sh",
+    "lint": "shellcheck -e SC1091 ./*.sh && shellcheck -e SC1091 ./**/*.sh",
     "cypress:development": "export NODE_ENV=development APPLITOOLS_API_KEY=$(gcloud secrets versions access latest --secret=APPLITOOLS_API_KEY) && cypress open",
     "cypress:development:headless": "export NODE_ENV=development APPLITOOLS_API_KEY=$(gcloud secrets versions access latest --secret=APPLITOOLS_API_KEY) && cypress run",
     "cypress:production": "export NODE_ENV=production && npx cypress run",
