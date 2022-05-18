@@ -17,6 +17,10 @@ echo "building docker image: $IMAGE_NAME"
 
 docker build -t "$IMAGE_NAME" .
 
+echo "logging in to Docker."
+
+echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
 echo "pushing image"
 
 docker push "$IMAGE_NAME"
