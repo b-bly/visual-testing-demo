@@ -47,7 +47,15 @@ shellcheck wiki
 https://github.com/koalaman/shellcheck/wiki/Ignore
 
 
-TODO
+### CircleCi notes
+
+Paths referenced in ci must be relative to project, not yaml location.
+
+```
+bash: ../hello.sh: No such file or directory
+```
+
+### To Do
 
 deploy a containerized web app
 https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app

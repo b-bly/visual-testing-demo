@@ -25,12 +25,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-      - run:
-          name: "Relative filepath from this dir"
-          command: bash ../hello.sh
-      - run:
           name: "Relative from project dir"
           command: bash hello.sh
       - run:
