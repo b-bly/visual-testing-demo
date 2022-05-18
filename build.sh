@@ -14,8 +14,8 @@ npm run clean:results
 
 echo "building docker image: $IMAGE_NAME"
 
-docker build -t $IMAGE_NAME .
+docker build -t "$IMAGE_NAME" .
 
 echo "pushing image"
 
-docker push $IMAGE_NAME
+docker push "$IMAGE_NAME"
