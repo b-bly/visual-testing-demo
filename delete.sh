@@ -12,4 +12,4 @@ export VERSION=$VERSION
 
 envsubst < ./kubernetes/service.yaml | kubectl delete -f -
 envsubst < ./kubernetes/deployment.yaml | kubectl delete -f -
-y | gcloud container clusters delete node-kubernetes --zone us-central1-a
+echo y | gcloud container clusters delete node-kubernetes --zone us-central1-a
