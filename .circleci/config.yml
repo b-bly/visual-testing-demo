@@ -25,9 +25,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "relative from this yaml."
-          command: bash ../hello.sh
-      - run:
           name: "Relative from project dir"
           command: bash hello.sh
       - run:
