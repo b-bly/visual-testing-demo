@@ -10,7 +10,8 @@ fi
 IMAGE_NAME=gcr.io/$GOOGLE_PROJECT_ID/visual-testing-demo:$VERSION
 
 rm -rf node_modules
-npm run clean:results
+rm -rf mochawesome-report
+rm -rf mochawesome.json
 
 echo "building docker image: $IMAGE_NAME"
 
