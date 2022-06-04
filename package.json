@@ -40,6 +40,7 @@
     "mochawesome-report-generator": "^6.2.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "nodemon": "^2.0.16",
     "pre-commit": "^1.2.2",
     "shellcheck": "^1.1.0"

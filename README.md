@@ -32,15 +32,23 @@ Each pod executes a visual test with a different library against a site
 Pull test from a queue?
 Each pod is a different image
 
-1. run locally
-2. run on gke
-3. automate image building with gitlab? github?
-4. Automate test with circleCI? https://medium.com/devopscurry/jenkins-is-getting-old-so-what-are-the-alternatives-in-2021-fd6ce6707465  
-5. yaml lint
+## Features
+- [x] run locally on minikube
+- [x] run on gke
+- [x] automate image building with gitlab? github?
+- [x] Automate test with circleCI? https://medium.com/devopscurry/jenkins-is-getting-old-so-what-are-the-alternatives-in-2021-fd6ce6707465  
+- [x] yaml lint
+- [ ] Send exit signal from k8s pod
+- [ ] Delete deployment from ci
+- [ ] Collect test results
+- [ ] Display test results
+- [ ] Save result history in gcp
+- [ ] Parallel run based on time.
 
 gcloud secrets
 https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets
 
+get secret from google cloud
 APPLITOOLS_API_KEY=$(gcloud secrets versions access latest --secret="APPLITOOLS_API_KEY")
 
 shellcheck wiki
